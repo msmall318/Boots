@@ -1,0 +1,26 @@
+---
+title: "OPER 782 - Analytic Proposal Review #1"
+author: "Matthew Small"
+date: "17 January 18"
+output: github_document
+keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Section 1
+
+(@) Provide a short name (either a single word or an acronym) for the analytic you plan to develop. 
+
+Boots
+
+(@) Provide a brief title (1-2 sentences) describing - at the 50,000 foot level - what your analytic does.  Your title should be short and to the point, but should also be clear to an end user.
+
+(@) Provide a description (2-3 paragraphs) of why this analytic data product will be useful for an end-user.  This description should address the following points (where applicable).
+
+i) Describe any of the features that your analytic will perform when complete
+ii) Describe the typical end-user for whom this analytic is being developed
+
+# Section 2
