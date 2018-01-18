@@ -40,7 +40,7 @@ The following table gives several features which will be addressed in the analyt
 
 2.1.A. The description of the feature 2.1.B. A rank ordered priority number for this feature 2.1.C. The status of the feature – should be either ‘finished’, ‘in-work’, or ‘not started’ 2.1.D. What value will this feature provide to an end-user? 2.1.E. What input(s) must be provided by end-user to perform this feature? 2.1.F. What output(s) will this feature return to the end-user? 2.1.G. What do you envision an end-user will do with the output of this feature? 2.1.H. Is there sufficient time to deliver this feature prior to the deadline? 2.1.I. Does this feature need to be included in the current version of your analytic or can it be pushed to a future update?
 
-A rank of 1 is deemed most important with higher rankings being of lesser import. The value is provided
+A rank of 1 is deemed most important with higher values being of lesser import.
 
 <table style="width:100%;">
 <colgroup>
