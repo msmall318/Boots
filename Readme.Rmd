@@ -17,41 +17,25 @@ knitr::opts_chunk$set(echo = TRUE)
 Boots
 
 2. Provide a brief title (1-2 sentences)   describing - at the 50,000 foot level - what your analytic does.  Your title should be short and to the point, but should also be clear to an end user.
-
-The analytic takes Defense Manpower Data Center(DMDC) data on troop numbers abroad for active duty military personnel and generates forecasts for the selected country or countries, provides accuracy statistics, a visual depiction of the forecasts including actual observed values, and projected troop numbers for the year or years of interest.
+The analytic takes Defense Manpower Data Center(DMDC) data on troop numbers abroad for active duty military personnel and generates forecasts for the selected country or countries, provides accuracy statistics, a visual depiction of the forecasts including actual observed values, and projected troop numbers for the year or years of interest.  
 
 3. Provide a description (2-3 paragraphs) of why this analytic data product will be useful for an end-user.  This description should address the following points (where applicable).
 
-i) Describe any of the features that your analytic will perform when complete
+This analytic will be utilized by USTRANSCOM to better predict USTRANSCOM workload demands in coming years.  The features which my analytic will perform when complete are to import the data, tidy the data in the format popularized by Wickham, group the data by country, branch, order the data by year, convert the data to a zoo/time series object, implement forecast functions, plot the forecasts, provide accuracy metrics, provide forecast values, and confidence intervals for years of interest. The typical end-users for whom this analytic is being developed are analysts at USTRANSCOM/JDPAC.  Important knowledge/skills/abilities an end-user must have in order to utilize the analytic is a knowledge of forecasting techniques such as ARIMA, exponential smoothing, and possibly some dynamic regression models; however, the analytic will provide a basic description of what the model is and its key parameters and terms.
 
-The features which my analytic will perform when complete are to import the data, tidy the data in the format popularized by Wickham, group the data by country, branch, order the data by year, convert the data to a zoo/time series object, implement forecast functions, plot the forecasts, provide accuracy metrics, provide forecast values, and range for years of interest
-
-ii) Describe the typical end-user for whom this analytic is being developed
-
-The typical end-users for whom this analytic is being developed are analysts at USTRANSCOM/JDPAC.
-
-iii) Describe any specific knowledge/skills/abilities an end-user must have to use your analytic
-
-Important knowledge/skills/abilities an end-user must have in order to utilize the analytic is a knowledge of forecasting techniques such as ARIMA, exponential smoothing, and possibly some dynamic regression models; however, the analytic will provide a basic description of what the model is and its key parameters and terms.
-
-iv) If your analytic implements known statistical methods, specify them
-
-The analytic implements autoregressive integrated moving average (ARIMA) forecasting models, simple exponential smoothing models, Holt models, and forecasting accuracy metrics
-
-v) If your analytic builds on existing statistical methods or **R** packages, specify them
-
-This analytic is built upon \textbf{R} packages: *forecast, ggplot2 and tidyverse*
-
-4) How will end-users access your analytic data product?
-
-End-users will access the data analytic product via the internet.
-
-5) Are there any security concerns that need to be addressed?
-
-All data are available from the unclassified, open-source database maintained by DMDC.  There are no security concerns that need to be addressed.
-
-6) Are there any appearance/design constraints that your analytic must adhere to?
-
-There are no appearance/design constraints that the analytic must adhere to, but the goal is to provide a clean design with easy to use graphical user interface.
+The analytic implements autoregressive integrated moving average (ARIMA) forecasting models, simple exponential smoothing models, Holt models, and forecasting accuracy metrics.  This analytic is built upon \textbf{R} packages: *forecast, ggplot2 and tidyverse*.  End-users will access the data analytic product via the internet.  All data are available from the unclassified, open-source database maintained by DMDC.  There are no security concerns that need to be addressed.  There are no appearance/design constraints that the analytic must adhere to, but the goal is to provide a clean design with easy to use graphical user interface.
 
 # Section 2
+
+| Feature           | Description                                                                                                                 | Rank | Status      | Value | Inputs                                                   | Outputs                                     | Utilization | Sufficient Time? | Current or Future? |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------|------|-------------|-------|----------------------------------------------------------|---------------------------------------------|-------------|------------------|--------------------|
+| Download the Data | This feature downloads the data off of the DMDC website                                                                     | 10   | Not Started | 1     | PDF and/or Microsoft Excel Files Containing Troop Values | R Data Frame Containing Troop Data          | Low         | Maybe            | Future             |
+| Tidy the Data     | This feature tidys the data such that each variable is represented by a column and each observation is represented by a row | 7    | In Progress | 2     | R Data Frame in Non-Tidy Format                          | R Data Frame in Tidy Format                 | Medium      | Yes              | Current            |
+| Group Data        | This feature groups the data by country and military branch.                                                                | 6    | In Progress | 3     | R Data Frame in Tidy Format                              | R Data Frame grouped by country and branch. | Medium      |                  | Current            |
+| Order Data        | This feature orders the data in chronological order                                                                         | 4    | In Progress | 4     | R Data Frame                                             | R Data                                      | Medium      |                  | Current            |
+| Fill Missing Data | This feature fills the missing observations by interpolating between the nearest two points.                                | 8    |             |       | R Data Frame                                             | R Data Frame                                | Medium      |                  |                    |
+| Convert Data      | This feature converts the ordered data into a time series object.                                                           | 5    | In Progress | 5     | R Data Frame                                             | Zoo Object                                  | Medium      |                  | Current            |
+| Forecast          | This feature takes the converted data and applies forecasting functions to it.                                              | 1    | In Progress | 1     | Zoo Object                                               | Forecast Object                             | High        |                  | Current            |
+| Plot Forecasts    | This function takes the forecast and generates plots.                                                                       | 3    | In Progress | 2     | Forecast Object                                          | Plot (graphical object)                     | High        |                  | Current            |
+| Assess Accuracy   | This function assesses the accuracy of the forecasts.                                                                       | 9    | In Progress | 3     | Forecast Object                                          | List                                        | Low         |                  | Current            |
+| Provide Values    | This function provides the actual values for the forecast for use in USTRANSCOM Models                                      | 2    | Not Started | 4     | Forecast Object                                          | Vector                                      | High        |                  | Current            |
