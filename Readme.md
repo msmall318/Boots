@@ -10,7 +10,7 @@ Section 1
 
 Boots
 
-1.  Provide a brief title (1-2 sentences) describing - at the 50,000 foot level - what your analytic does. Your title should be short and to the point, but should also be clear to an end user. &gt; The analytic takes Defense Manpower Data Center(DMDC) data on troop numbers abroad for active duty military personnel and generates forecasts for the selected country or countries, provides accuracy statistics, a visual depiction of the forecasts including actual observed values, and projected troop numbers for the year or years of interest.
+1.  Provide a brief title (1-2 sentences) describing - at the 50,000 foot level - what your analytic does. Your title should be short and to the point, but should also be clear to an end user. The analytic takes Defense Manpower Data Center(DMDC) data on troop numbers abroad for active duty military personnel and generates forecasts for the selected country or countries, provides accuracy statistics, a visual depiction of the forecasts including actual observed values, and projected troop numbers for the year or years of interest.
 
 2.  Provide a description (2-3 paragraphs) of why this analytic data product will be useful for an end-user. This description should address the following points (where applicable).
 
@@ -82,7 +82,7 @@ Section 2
 <td>R Data Frame in Tidy Format</td>
 <td>R Data Frame grouped by country and branch.</td>
 <td>Medium</td>
-<td></td>
+<td>Yes</td>
 <td>Current</td>
 </tr>
 <tr class="even">
@@ -94,20 +94,20 @@ Section 2
 <td>R Data Frame</td>
 <td>R Data</td>
 <td>Medium</td>
-<td></td>
+<td>Yes</td>
 <td>Current</td>
 </tr>
 <tr class="odd">
 <td>Fill Missing Data</td>
 <td>This feature fills the missing observations by interpolating between the nearest two points.</td>
 <td>8</td>
-<td></td>
-<td></td>
+<td>In Progress</td>
+<td>4</td>
 <td>R Data Frame</td>
 <td>R Data Frame</td>
 <td>Medium</td>
-<td></td>
-<td></td>
+<td>Yes</td>
+<td>Current</td>
 </tr>
 <tr class="even">
 <td>Convert Data</td>
@@ -118,7 +118,7 @@ Section 2
 <td>R Data Frame</td>
 <td>Zoo Object</td>
 <td>Medium</td>
-<td></td>
+<td>Yes</td>
 <td>Current</td>
 </tr>
 <tr class="odd">
@@ -130,7 +130,7 @@ Section 2
 <td>Zoo Object</td>
 <td>Forecast Object</td>
 <td>High</td>
-<td></td>
+<td>Yes</td>
 <td>Current</td>
 </tr>
 <tr class="even">
@@ -142,7 +142,7 @@ Section 2
 <td>Forecast Object</td>
 <td>Plot (graphical object)</td>
 <td>High</td>
-<td></td>
+<td>Yes</td>
 <td>Current</td>
 </tr>
 <tr class="odd">
@@ -154,7 +154,7 @@ Section 2
 <td>Forecast Object</td>
 <td>List</td>
 <td>Low</td>
-<td></td>
+<td>Yes</td>
 <td>Current</td>
 </tr>
 <tr class="even">
@@ -166,7 +166,7 @@ Section 2
 <td>Forecast Object</td>
 <td>Vector</td>
 <td>High</td>
-<td></td>
+<td>Yes</td>
 <td>Current</td>
 </tr>
 </tbody>
