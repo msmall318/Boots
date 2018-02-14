@@ -1,0 +1,12 @@
+name: myfirstapp
+title: myfirstapp
+username:
+account: msmall318
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 264999
+bundleId: 1197599
+url: https://msmall318.shinyapps.io/myfirstapp/
+when: 1517232899.2281
+asMultiple: FALSE
+asStatic: FALSE

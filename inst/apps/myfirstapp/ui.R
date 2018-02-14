@@ -13,6 +13,6 @@ ui <- fluidPage(title = 'My First App!',
                               mainPanel(width=9,
                                         tabsetPanel(
                                           tabPanel(title='Output Map',
-                                                   plotOutput(outputId="map")),
+                                                   plotOutput(outputId='map')),
                                           tabPanel(title='Data Table',
                                                    dataTableOutput(outputId='table'))))))
