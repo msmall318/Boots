@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/msmall318/Boots.svg?branch=master)](https://travis-ci.org/msmall318/Boots)
+
 ---
 title: "OPER 782 - Analytic Proposal Review #1"
 author: "Matthew Small"
