@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/msmall318/Boots.svg?branch=master)](https://travis-ci.org/msmall318/Boots)
-
 ---
 title: "OPER 782 - Analytic Proposal Review #1"
 author: "Matthew Small"
@@ -7,6 +5,7 @@ date: "17 January 18"
 output: github_document
 keep_md: true
 ---
+#[![Build Status](https://travis-ci.org/msmall318/Boots.svg?branch=master)](https://travis-ci.org/msmall318/Boots)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

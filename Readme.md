@@ -3,6 +3,9 @@ OPER 782 - Analytic Proposal Review \#1
 Matthew Small
 17 January 18
 
+[![Build Status](https://travis-ci.org/msmall318/Boots.svg?branch=master)](https://travis-ci.org/msmall318/Boots)
+=================================================================================================================
+
 Section 1
 =========
 
