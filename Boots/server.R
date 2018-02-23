@@ -1,30 +1,54 @@
- #Data pre-processing ----
- #Tweak the "am" variable to have nicer factor labels -- since this
- #doesn't rely on any user inputs, we can do this once at startup
- #and then use the value throughout the lifetime of the app
-Troop_Data <- readRDS(file="Troop_Data.rds")
+ 
+  #Load the Data ----
+  Troop_Data <- readRDS("~/Boots/Boots/data/Troop_Data2.rds")
+  library(shiny)
+  library(magrittr)
+  library(ggplot2)
+  library(forecast)
+  library(zoo)
+ 
+  #Define server logic ----
+  
+  server <- function(input, output) {
 
- #Define server logic to plot various variables against mpg ----
-server <- function(input, output) {
-
-  # Compute the formula text ----
-   #This is in a reactive expression since it is shared by the
-   #output$caption and output$mpgPlot functions
-  country <- reactive({input$country})
+  # Formula Variable Definitions ----
+  output$country <- reactive({input$country})
   service <- reactive({input$service})
-  start <- reactive({input$start})
-  end <- reactive({input$end})
+  train <- reactive({input$train})
   horizon <- reactive({input$horizon})
+  model <- reactive({input$model})
+  horizon <- reactive({input$horizon})
+  aggregate <- reactive({input$aggregate})
 
-   #Return the formula text for printing as a caption ----
-  output$caption <- renderText({
-   formulaText()
+  # Return the formula text for printing as a caption ----
+  # output$caption <- renderText({
+  #  formulaText()
+  # })
+
+    #Generate a plot 
+  # output$SummaryPlot <- renderPlot({
+  #  Troop_Data %>% dplyr::filter(Country==input$country,Branch==input$service,Year %in% seq(input$train[1],input$train[2],1)) %>% ggplot2::ggplot(data=.,aes(Year,Interpolated))+geom_line()
+  # })
+  
+  output$ResidualPlot <- renderPlot({
+    Troop_Data %>% dplyr::filter(Country==input$country,Branch==input$service,Year %in% seq(input$train[1],input$train[2],1)) %>% ggplot2::ggplot(data=.,aes(Year,Interpolated))+geom_line()
   })
-
-    #Generate a plot of the requested variable against mpg ----
-    #and only exclude outliers if requested
- output$ForecastPlot <- renderPlot({
-   Troop_Data %>% dplyr::filter(Country==country,Branch==service) %>% ggplot(data=.,aes(Year,Interpolated))+geom_line()
+  
+  output$ForecastPlot <- renderPlot({
+    autoplot(forecast(zoo(x=Troop_Data %>%
+                            dplyr::filter(Country==input$country,
+                                          Branch==input$service,
+                                          Year %in% seq(input$train[1],
+                                                        input$train[2],
+                                                        1)) %>%
+                            dplyr::select(Interpolated),
+                          order.by=index(Troop_Data %>%
+                            dplyr::filter(Country==input$country,
+                                          Branch==input$service,
+                                          Year %in% seq(input$train[1],
+                                                        input$train[2],
+                                                        1)) %>% 
+                            dplyr::select(Year))),h=input$horizon))
   })
-
+  
 }
