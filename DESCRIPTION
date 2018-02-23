@@ -5,8 +5,11 @@ Version: 1.0
 Date: 2018-01-31
 Author: Matthew Small
 Maintainer: Matthew Small <matthew.small@afit.edu>
-Description: One paragraph description of what the package does as one or more full sentences.
+Description: The analytic takes Defense Manpower Data Center(DMDC) data on troop numbers abroad for active duty military personnel and generates forecasts for the selected country or countries, provides accuracy statistics, a visual depiction of the forecasts including actual observed values, and projected troop numbers for the year or years of interest.
 License: GPL (>= 2)
-Imports: Rcpp (>= 0.12.12)
+Imports:
+  forecast,
+  ggplot2,
+  tidyverse
 LinkingTo: Rcpp
 RoxygenNote: 6.0.1

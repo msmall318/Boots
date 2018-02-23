@@ -1,33 +1,44 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
-
-library(shiny)
-
-
-
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
+# Define UI for miles per gallon app ----
+ui <- fluidPage(
   
-  # Application title
-  titlePanel("US Military Troop Data"),
+  # App title ----
+  titlePanel("Estimating Global Troop Laydown"),
   
-  # Sidebar with a slider input for number of bins 
+  # Sidebar layout with input and output definitions ----
   sidebarLayout(
+    
+    # Sidebar panel for inputs ----
     sidebarPanel(
-       selectInput("Service",
-                   "Number of bins:",
-                   c("Air Force", "Army", "Marine Corps", "Navy"))
+      
+      # Input: Selector for variable to plot against mpg ----
+      selectInput("service", "Service:",
+                  c("Air Force",
+                    "Army",
+                    "Marine Corps",
+                    "Navy")),
+      
+      sliderInput("start","Start Year:",
+                  min=1950,
+                  max=2016,
+                  value = 1950),
+      
+      sliderInput("end","End Year:",
+                  min=1951,
+                  max=2017,
+                  value = 2017),
+      
+      sliderInput("horizon","Forecast Horizon:",
+                  min = 1,
+                  max = 20,
+                  value = 10)
     ),
     
-    # Show a plot of the generated distribution
+    # Main panel for displaying outputs ----
     mainPanel(
-       plotOutput("distPlot")
+      
+      # Output: Plot of the requested variable against mpg ----
+      plotOutput("ForecastPlot")
+      
     )
   )
-))
+)
