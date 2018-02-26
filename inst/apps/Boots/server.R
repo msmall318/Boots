@@ -1,15 +1,4 @@
- 
-  #Load the Data ----
-  Troop_Data <- readRDS("~/Boots/Boots/data/Troop_Data2.rds")
-  library(shiny)
-  library(magrittr)
-  library(ggplot2)
-  library(forecast)
-  library(zoo)
- 
-  #Define server logic ----
-  
-  server <- function(input, output) {
+server <- function(input, output) {
 
   # Formula Variable Definitions ----
   output$country <- reactive({input$country})
