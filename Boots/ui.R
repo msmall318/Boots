@@ -11,14 +11,13 @@ ui <- fluidPage(
     sidebarPanel(
       
       # Input: Selector for variable to plot against mpg ----
+      selectInput("country", "Country:",
+                  unique(Troop_Data$Country)),
       selectInput("service", "Service:",
                   c("Air Force",
                     "Army",
                     "Marine Corps",
                     "Navy")),
-      selectInput("country", "Country:",
-                  unique(Troop_Data$Country)),
-      
       sliderInput("train","End Year:",
                   min=1951,
                   max=2017,
@@ -38,11 +37,22 @@ ui <- fluidPage(
     
     # Main panel for displaying outputs ----
     mainPanel(
-      
-      # Output: Plot thing ----
-      plotOutput("ForecastPlot"),
-      plotOutput("ResidualPlot")
-      
+    #   # Output: Plot forecasts
+    #   plotOutput("ARIMAPlot"),
+    #   plotOutput("ETSPlot")
+    # ),
+    tabsetPanel(type = "tabs",
+                tabPanel("Plots",
+                         plotOutput("ARIMAPlot"),
+                         plotOutput("ETSPlot")
+                         ),
+                tabPanel("ETS Summary",  verbatimTextOutput("ETSsummary")
+                         ),
+                tabPanel("ARIMA Summary", verbatimTextOutput("ARIMAsummary")
+                         ),
+                tabPanel("Residual Plots", plotOutput("ETS Residuals"), plotOutput("ARIMA Residuals")
+                        )
     )
   )
+)
 )
