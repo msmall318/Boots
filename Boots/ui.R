@@ -46,11 +46,11 @@ ui <- fluidPage(
                          plotOutput("ARIMAPlot"),
                          plotOutput("ETSPlot")
                          ),
+                tabPanel("ARIMA Summary", verbatimTextOutput("ARIMAsummary")
+                ),
                 tabPanel("ETS Summary",  verbatimTextOutput("ETSsummary")
                          ),
-                tabPanel("ARIMA Summary", verbatimTextOutput("ARIMAsummary")
-                         ),
-                tabPanel("Residual Plots", plotOutput("ETS Residuals"), plotOutput("ARIMA Residuals")
+                tabPanel("Residual Plots", plotOutput("ARIMA Residuals"), plotOutput("ETS Residuals")
                         )
     )
   )
