@@ -1,13 +1,13 @@
 server <- function(input, output) {
 
   # Formula Variable Definitions ----
-  output$country <- reactive({input$country})
-  service <- reactive({input$service})
-  train <- reactive({input$train})
-  horizon <- reactive({input$horizon})
-  model <- reactive({input$model})
-  horizon <- reactive({input$horizon})
-  aggregate <- reactive({input$aggregate})
+  # country <- reactive({input$country})
+  # service <- reactive({input$service})
+  # train <- reactive({input$train})
+  # horizon <- reactive({input$horizon})
+  # model <- reactive({input$model})
+  # horizon <- reactive({input$horizon})
+  # aggregate <- reactive({input$aggregate})
   
   output$ARIMAPlot <- renderPlot({
     Troop_Data %>%

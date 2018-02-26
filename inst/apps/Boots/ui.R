@@ -17,22 +17,20 @@ ui <- fluidPage(
                   c("Air Force",
                     "Army",
                     "Marine Corps",
-                    "Navy")),
-      sliderInput("train","End Year:",
+                    "Navy",
+                    "All Services")),
+      sliderInput("train","Model Training Years:",
                   min=1951,
                   max=2017,
                   value = c(1950,2017),
                   sep=""),
       
-      numericInput("horizon","Forecast Horizon:",
-                  value = 1),
-      radioButtons("model",label="Model:",
-                   choices=list("ARIMA"=1,"ETS"=2),
-                   selected=1),
-      
-      radioButtons("aggregate",label="Aggregate or Disaggregate:",
-                   choices=list("Aggregate"=1,"Disaggregate"=2),
-                   selected=2)
+      numericInput("horizon","Forecast Horizon (Years):",
+                  value = 5)#,
+      # radioButtons("model",label="Model:",
+      #              choices=list("ARIMA"=1,"ETS"=2),
+      #              selected=1),
+      # 
     ),
     
     # Main panel for displaying outputs ----
