@@ -2,14 +2,14 @@
 ui <- fluidPage(
   
   # App title ----
-  titlePanel("Estimating Global Troop Laydown"),
+  titlePanel("Predicting Global Disposition of U.S. Military Personnel via Open-Source, Unclassified Means"),
   
   # Sidebar layout with input and output definitions ----
   sidebarLayout(
     
     # Sidebar panel for inputs ----
     sidebarPanel(
-      
+      "R Shiny Application",
       # Input: Selector for variable to plot against mpg ----
       selectInput("country", "Country:",
                   unique(Troop_Data$Country)),
