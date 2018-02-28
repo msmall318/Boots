@@ -7,7 +7,7 @@
 #'Define the parameters within the arguments
 #'run_my_app(app_name,...)
 #'
-#'@param app_name Character string for a directory in this package
+#'@param Boots Character string for a directory in this package
 #'@param ... Additional options passed to shinyAppDir
 #'
 #'@return A printed shiny app
