@@ -3,29 +3,20 @@
 \alias{Boots}
 \docType{package}
 \title{
-  A short title line describing what the package does
+  Predicts Disposition of U.S. Military Personnel by Country and Branch
 }
 \description{
-  A more detailed description of what the package does. A length
-  of about one to five lines is recommended.
+ This package utilizes R packages to forecast the number of U.S. Military personnel by Country in either a disaggregated fashion (by branch) or an aggregated fashion (All Services).  The results are plotted using ggplot2.
 }
 \details{
-  This section should provide a more detailed overview of how to use the
-  package, including the most important functions.
+  
 }
-\author{
-Matthew Small, email optional.
-
-Maintainer: Matthew Small <matthew.small@afit.edu>
+\author{Matthew Small <matthew.small@afit.edu>
 }
 \references{
-  This optional section can contain literature or other references for
-  background information.
+  See Hyndman Automatic Forecasting (2008)
 }
-\keyword{ package }
-\seealso{
-  Optional links to other man pages
-}
+\keyword{ forecast, military, personnel }
 \examples{
   \dontrun{
      ## Optional simple examples of the most important functions
