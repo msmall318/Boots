@@ -42,13 +42,13 @@ ui <- fluidPage(
     tabsetPanel(type = "tabs",
                 tabPanel("Plots",            plotOutput("ARIMAPlot"),
                                              plotOutput("ETSPlot")),
-                tabPanel("Comparison Plots", plotOutput("ARIMAComparisonPlot"),
-                                             plotOutput("ETSComparisonPlot")),
+                #tabPanel("Comparison Plots", plotOutput("ARIMAComparisonPlot"),
+                #                             plotOutput("ETSComparisonPlot")),
                 tabPanel("ARIMA Summary",    verbatimTextOutput("ARIMAsummary")),
                 tabPanel("ETS Summary",      verbatimTextOutput("ETSsummary")),
                 tabPanel("Residual Plots",   plotOutput("ARIMA Residuals"),
-                                             plotOutput("ETS Residuals")),
-                tabPanel("ARIMA Accuracy",   verbatimTextOutput("ARIMA Comparison Accuracy"))
+                                             plotOutput("ETS Residuals"))
+                #tabPanel("ARIMA Accuracy",   verbatimTextOutput("ARIMA Comparison Accuracy"))
     )
   )
 )

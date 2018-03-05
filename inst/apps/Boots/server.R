@@ -22,25 +22,25 @@ server <- function(input, output) {
       autoplot(xlab="Year",ylab="Number of Military Personnel")
   })
   
-  output$ARIMAComparisonPlot <- renderPlot({
-    Troop_Data %>%
-      dplyr::filter(Country==input$country,
-                    Branch==input$service,
-                    Year %in% seq(input$train[1],
-                                  input$train[2],
-                                  1)) %$%
-      zoo(Interpolated,Year) %>%
-      auto.arima() %>%
-      forecast(h=input$horizon) %>%
-      autoplot(xlab="Year",ylab="Number of Military Personnel") +
-      autolayer(Troop_Data %>%
-                  dplyr::filter(Country==input$country,
-                                Branch==input$service,
-                                Year %in% seq((input$train[2]+1),
-                                              (input$train[2]+input$horizon),
-                                              1)) %$%
-                  zoo(Interpolated,Year) %>% as.ts())
-  })
+  # output$ARIMAComparisonPlot <- renderPlot({
+  #   Troop_Data %>%
+  #     dplyr::filter(Country==input$country,
+  #                   Branch==input$service,
+  #                   Year %in% seq(input$train[1],
+  #                                 input$train[2],
+  #                                 1)) %$%
+  #     zoo(Interpolated,Year) %>%
+  #     auto.arima() %>%
+  #     forecast(h=input$horizon) %>%
+  #     autoplot(xlab="Year",ylab="Number of Military Personnel") +
+  #     autolayer(Troop_Data %>%
+  #                 dplyr::filter(Country==input$country,
+  #                               Branch==input$service,
+  #                               Year %in% seq((input$train[2]+1),
+  #                                             (input$train[2]+input$horizon),
+  #                                             1)) %$%
+  #                 zoo(Interpolated,Year) %>% as.ts())
+  # })
 
   output$ETSPlot <- renderPlot({
     Troop_Data %>%
@@ -55,25 +55,25 @@ server <- function(input, output) {
       autoplot(xlab="Year",ylab="Number of Military Personnel")
   })
   
-  output$ETSComparisonPlot <- renderPlot({
-    Troop_Data %>%
-      dplyr::filter(Country==input$country,
-                    Branch==input$service,
-                    Year %in% seq(input$train[1],
-                                  input$train[2],
-                                  1)) %$%
-      zoo(Interpolated,Year) %>%
-      ets() %>%
-      forecast(h=input$horizon) %>%
-      autoplot(xlab="Year",ylab="Number of Military Personnel") +
-      autolayer(Troop_Data %>%
-                  dplyr::filter(Country==input$country,
-                                Branch==input$service,
-                                Year %in% seq((input$train[2]+1),
-                                              (input$train[2]+input$horizon),
-                                              1)) %$%
-                  zoo(Interpolated,Year) %>% as.ts())
-  })
+  # output$ETSComparisonPlot <- renderPlot({
+  #   Troop_Data %>%
+  #     dplyr::filter(Country==input$country,
+  #                   Branch==input$service,
+  #                   Year %in% seq(input$train[1],
+  #                                 input$train[2],
+  #                                 1)) %$%
+  #     zoo(Interpolated,Year) %>%
+  #     ets() %>%
+  #     forecast(h=input$horizon) %>%
+  #     autoplot(xlab="Year",ylab="Number of Military Personnel") +
+  #     autolayer(Troop_Data %>%
+  #                 dplyr::filter(Country==input$country,
+  #                               Branch==input$service,
+  #                               Year %in% seq((input$train[2]+1),
+  #                                             (input$train[2]+input$horizon),
+  #                                             1)) %$%
+  #                 zoo(Interpolated,Year) %>% as.ts())
+  # })
   
   output$ETSsummary <- renderPrint({
     Troop_Data %>%
@@ -125,22 +125,22 @@ server <- function(input, output) {
       checkresiduals
   })
   
-  output$`ARIMA Comparison Accuracy` <- renderPrint({
-    Troop_Data %>%
-      dplyr::filter(Country==input$country,
-                    Branch==input$service,
-                    Year %in% seq(input$train[1],
-                                  input$train[2],
-                                  1)) %$%
-      zoo(Interpolated,Year) %>%
-      auto.arima() %>%
-      forecast(h=input$horizon) %>% 
-      accuracy(.,Troop_Data %>%
-                 dplyr::filter(Country==input$country,
-                               Branch==input$service,
-                               Year %in% seq((input$train[2]+1),
-                                             (input$train[2]+input$horizon),
-                                             1)) %$%
-                 zoo(Interpolated,Year))
-  })
+  # output$`ARIMA Comparison Accuracy` <- renderPrint({
+  #   Troop_Data %>%
+  #     dplyr::filter(Country==input$country,
+  #                   Branch==input$service,
+  #                   Year %in% seq(input$train[1],
+  #                                 input$train[2],
+  #                                 1)) %$%
+  #     zoo(Interpolated,Year) %>%
+  #     auto.arima() %>%
+  #     forecast(h=input$horizon) %>% 
+  #     accuracy(.,Troop_Data %>%
+  #                dplyr::filter(Country==input$country,
+  #                              Branch==input$service,
+  #                              Year %in% seq((input$train[2]+1),
+  #                                            (input$train[2]+input$horizon),
+  #                                            1)) %$%
+  #                zoo(Interpolated,Year))
+  # })
 }
