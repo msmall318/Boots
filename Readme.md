@@ -3,8 +3,7 @@ OPER 782 - Analytic Proposal Review \#1
 Matthew Small
 17 January 18
 
-[![Build Status](https://travis-ci.org/msmall318/Boots.svg?branch=master)](https://travis-ci.org/msmall318/Boots)
-=================================================================================================================
+[![Build Status](https://travis-ci.org/msmall318/Boots.svg?branch=master)](https://travis-ci.org/msmall318/Boots) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/msmall318/Boots?branch=master&svg=true)](https://ci.appveyor.com/project/msmall318/Boots) [![codecov](https://codecov.io/gh/msmall318/Boots/branch/master/graph/badge.svg)](https://codecov.io/gh/msmall318/Boots)
 
 ### Provide a short name (either a single word or an acronym) for the analytic you plan to develop.
 
