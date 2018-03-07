@@ -9,8 +9,6 @@ ui <- fluidPage(
     
     # Sidebar panel for inputs ----
     sidebarPanel(
-      "R Shiny Application",
-      # Input: Selector for variable to plot against mpg ----
       selectInput("country", "Country:",
                   unique(Troop_Data$Country)),
       selectInput("service", "Service:",
