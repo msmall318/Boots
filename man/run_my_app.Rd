@@ -2,22 +2,18 @@
 % Please edit documentation in R/run_my_app.R
 \name{run_my_app}
 \alias{run_my_app}
-\title{Runs a shiny app in my package}
+\title{Runs the shiny app for my package}
 \usage{
 run_my_app(app_name, ...)
 }
 \arguments{
-\item{app_name}{Charater string for a directory in this package}
+\item{app_name}{Character string for a directory in this package}
 
 \item{...}{Additional options passed to shinyAppDir}
-}
-\value{
-A printed shiny app
 }
 \description{
 Runs as shiny app
 }
 \examples{
-\dontrun{ run_my_app('myfirstApp')}
-
+\dontrun{ run_my_app("Boots")}
 }
