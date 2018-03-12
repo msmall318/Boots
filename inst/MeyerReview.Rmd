@@ -10,11 +10,13 @@ output: html_document
 The Boots package is an easy to use Shiny app for forecasting.
   
 ##Accuracy
-The data appear to be accurate and it is clear how the results were computed.
+The data appear to be accurate in the Shiny app and it is clear how the forecasts were computed.
+
+The data features in the proposal appear to have worked, since the forecast worked and the dataset looks good.
   
 ##Compilation
 
-There were no problems running or installing the app or package. Everything seemed to update in the app when different selections were made.
+There were no problems running or installing the app or package. Everything seemed to update in the app when different selections were made. 
   
 ##Ease of Use
 
