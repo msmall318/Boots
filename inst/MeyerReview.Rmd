@@ -1,0 +1,26 @@
+---
+title: 'Boots Package Review'
+author: "Emily Meyer"
+date: "March 12, 2018"
+output: html_document
+---
+  
+##Overview
+
+The Boots package is an easy to use Shiny app for forecasting.
+  
+##Accuracy
+The data appear to be accurate and it is clear how the results were computed.
+  
+##Compilation
+
+There were no problems running or installing the app or package. Everything seemed to update in the app when different selections were made.
+  
+##Ease of Use
+
+The package documentation makes it easy to run the app. I was unaware that ETS stood for exponential smoothing, even though I've used exponential smoothing before, so that might be helpful to clarify. The plots look good. Would it be possible to include the comma separators on the y-axis troop numbers? It might also be helpful to add some guidelines for the residual plot tab.
+
+#Overall Score
+50 pts
+  
+  
