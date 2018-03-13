@@ -1,0 +1,123 @@
+---
+title: '`Boots` Package Review'
+author: "CPT James Gallagher"
+date: "March 12, 2018"
+output: html_document
+---
+
+##Overview
+
+  CPT Small presented a Shiny App geared towards helping analysts
+better forecast US Troop "Boots-on-the-Ground" based on 
+open source data provided from the Defense Manpower Data Center.
+He outlined 9 features that this app should accomplish as part of 
+routine use. These features and the analysis of these features
+are outlined below:
+
+
+##Feature Review
+
+* __Forecast__ - This portion of the app is done behind the scenes.
+However, when the sliders are moved or a different country/branch of service
+is selected, the visible plots do regenerate without any
+errors appearing in either the app or the console.
+
+* __Provide Values__ - The plots and report tabs regenerate with
+new results when the inputs are changed. Assuming users of the report
+are familiar with what the outputs are supposed to be and
+what those outputs mean, then the outputs will be useful.
+However, for a new user to this type of forecasting, some
+of the outputs seem to be missing context to help the
+user understand the meaning of the charts. For example,
+the residual plots are calculated and presented. 
+![Residual Plots](C:/Users/james_vldwy/Desktop/Boots/inst/GallagherReview/residualplots.PNG)
+However, no context is provided to help beginner users
+understand what these residuals mean or how they should be
+incorproated into analysis.
+
+* __Plot Forecasts__ - The forecast plots are recalculated
+and presented each time an input updates. The plots match
+the output provided in the report tabs, so the plots seem to
+be accurate. Again, no errors or warnings appear when the
+plots are generated.
+
+* __Order Data__ - This is another feature that is completed
+behind the scenes in the App. When comparing the generated
+plots to the dataset contained in the "data" folder for 
+a few data situations, such as Soldiers in Afghanistan. 
+![Afghanistan Data Table](C:/Users/james_vldwy/Desktop/Boots/inst/GallagherReview/afghanistantable.PNG)
+![Afghanistan Plots](C:/Users/james_vldwy/Desktop/Boots/inst/GallagherReview/afghanistanplot.png)
+The table is presented sequentially
+and the plot mirrors the table's output. Therefore, this feature
+appears to be working as intended.
+
+
+ __Convert Data__ - The report outputs on the ARIMA summary
+and ETS Summary looks properly formatted relative to what the
+regular output should be. Additionally, these outputs match
+the plots on the first tab. Therefore, the objects appear to be
+calculating appropriately.
+
+
+ __Group Data__ - Continuing from the previous feature, the
+data presented in the plots mirror identically the specific
+situations provided above. Therefore, the plots appear to be
+generating forecast objects only on the selected groups and
+not including other irrelevant information. Therefore, this
+function appears to be woring as intended as well.
+
+ __Tidy the Data__ - The dataset provided in the package
+comes tidied according to the "Tidyverse" rules. Therefore
+this feature is complete. However, it is unclear if this shiny
+app will conducts this tidying if new data is presented.
+
+ __Fill Missing Data__ - The dataset provides an imputed
+number column. This number on first glance appears to be
+a linear imputation from the two most recent encompassing years
+(i.e. if 1998 is missing, then that troop data is linearly
+imputed from 1997 and 1999). However, as with the previous
+feature, while present in the given data set, the ability to provide
+new data and confirm that it recalculates new imputed values
+is unclear.
+
+ __Assess Accuracy__ - The model outputs are provided
+to allow users to identify which model provides the best
+response based on the data inputs. This part also exhibits
+areas that require expert knowledge to use. Novice or beginner
+users will have a difficult time identifying which model
+output is better suited for their situation.
+
+
+
+##Overall Review
+
+Overall, this app does what the proposal indicates. The app
+calculates a forecast object and allows the user to select
+which country and which branch of US Service for forecasting.
+Additionally, it provides the outputs in easy to read plots
+that match across the different tabs. Additionally, the 
+output seem correctly calculated relative to what an untrained
+eye would expect the outputs to look like. However, this app 
+does have a shortcoming of not having immediate use for a
+new or beginner user. Users will have to do some external
+research to have a useable understanding of what the outputs
+are and what they are telling the user.
+
+
+##Result
+
+__48__ (if no gradation allowed, then __50__) - This app
+performs as required. There are no warnings or errors as the
+user generates outputs. The inputs are easy to use and
+understand what they are changing on the data set. The plots
+are easy to read and match across tabs. My only improvement
+would be to include a front page that highlights what the app
+is supposed to do, and how each tab in the app helps accomplish
+that goal. This front page could also explain some of the
+finer detailed items like which metric is best used for selecting
+a model or explaining the residuals and how the residuals
+might impact model selection or outputs. Otherwise, this
+app meets the requirements and could be published immediately
+to an audience of analysts who are familiar with these model 
+types and can use their expertise immediately.
+
